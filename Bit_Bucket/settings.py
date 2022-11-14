@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Clockify'
+
+    #'social_django',
+    'Clockify',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'Bit_Bucket.urls'
@@ -55,7 +59,7 @@ ROOT_URLCONF = 'Bit_Bucket.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -63,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                #'social_django.context_processors.backends',
             ],
         },
     },
@@ -122,3 +127,17 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#social app custom settings
+#AUTHENTICATION_BACKENDS = [
+#    'social_core.backends.google.GoogleOAuth2',
+#    'django.contrib.auth.backends.ModelBackend',
+#]
+
+#LOGIN_URL = 'login'
+#LOGIN_REDIRECT_URL = 'home'
+#LOGOUT_URL = 'logout'
+#LOGOUT_REDIRECT_URL = 'login'
+
+#SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '###################'
+#SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '########################'
